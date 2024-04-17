@@ -16,5 +16,20 @@ namespace financeManager
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inputType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inputMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
