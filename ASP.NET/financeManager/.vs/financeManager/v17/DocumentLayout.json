@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|c:\\users\\matteo\\documents\\coding\\github\\myprojects\\asp.net\\financemanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EEF5B4A-362F-435C-81F2-E6DF3C874EC0}|financeManager.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Form1.cs*",
+              "RelativeToolTip": "Form1.cs*",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAvwFsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T13:01:32.868Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Form1.cs [Design]*",
+              "RelativeToolTip": "Form1.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T12:41:18.248Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T16:09:55.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Matteo\\Documents\\Coding\\GitHub\\myProjects\\ASP.NET\\financeManager\\Form1.Designer.cs*",
+              "RelativeToolTip": "Form1.Designer.cs*",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:26:21.994Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -54,7 +54,7 @@ namespace financeManager
 
         private void addItem_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(inputValue.Text, out double Value) && !string.IsNullOrEmpty(inputType.Text) && !string.IsNullOrEmpty(inputMonth.Text) && !string.IsNullOrEmpty(inputName.Text))
+            if (double.TryParse(inputValue.Text, out double Value) && !string.IsNullOrEmpty(inputType.Text) && !string.IsNullOrEmpty(inputMonth.Text) && !string.IsNullOrEmpty(inputName.Text) && Value>0)
             {
                 Console.WriteLine("DATI OK");
                 string Name = inputName.Text;

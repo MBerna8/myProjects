@@ -32,8 +32,8 @@
             this.inputMonth = new System.Windows.Forms.ComboBox();
             this.addItem = new System.Windows.Forms.Button();
             this.missingData = new System.Windows.Forms.Label();
-            this.inputName = new financeManager.PlaceHolderTextBox();
             this.inputValue = new financeManager.PlaceHolderTextBox();
+            this.inputName = new financeManager.PlaceHolderTextBox();
             this.SuspendLayout();
             // 
             // inputType
@@ -96,23 +96,27 @@
             this.missingData.Visible = false;
             this.missingData.Click += new System.EventHandler(this.missingData_Click);
             // 
-            // inputName
-            // 
-            this.inputName.Location = new System.Drawing.Point(329, 12);
-            this.inputName.Name = "inputName";
-            this.inputName.PlaceHolderText = null;
-            this.inputName.Size = new System.Drawing.Size(134, 20);
-            this.inputName.TabIndex = 5;
-            this.inputName.Text = "Name";
-            // 
             // inputValue
             // 
+            this.inputValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
+            this.inputValue.ForeColor = System.Drawing.Color.Gray;
             this.inputValue.Location = new System.Drawing.Point(493, 12);
             this.inputValue.Name = "inputValue";
             this.inputValue.PlaceHolderText = null;
             this.inputValue.Size = new System.Drawing.Size(134, 20);
             this.inputValue.TabIndex = 6;
             this.inputValue.Text = "Value";
+            // 
+            // inputName
+            // 
+            this.inputName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
+            this.inputName.ForeColor = System.Drawing.Color.Gray;
+            this.inputName.Location = new System.Drawing.Point(329, 12);
+            this.inputName.Name = "inputName";
+            this.inputName.PlaceHolderText = null;
+            this.inputName.Size = new System.Drawing.Size(134, 20);
+            this.inputName.TabIndex = 5;
+            this.inputName.Text = "Name";
             // 
             // Form1
             // 

@@ -1,0 +1,10 @@
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\bin\Debug\financeManager.exe.config
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\bin\Debug\financeManager.exe
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\bin\Debug\financeManager.pdb
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\obj\Debug\financeManager.csproj.AssemblyReference.cache
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\obj\Debug\financeManager.Form1.resources
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\obj\Debug\financeManager.Properties.Resources.resources
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\obj\Debug\financeManager.csproj.GenerateResource.cache
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\obj\Debug\financeManager.csproj.CoreCompileInputs.cache
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\obj\Debug\financeManager.exe
+C:\Users\Matteo\Documents\Coding\GitHub\myProjects\ASP.NET\financeManager\obj\Debug\financeManager.pdb
