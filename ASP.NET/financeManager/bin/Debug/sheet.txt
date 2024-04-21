@@ -1,4 +1,3 @@
 RRR,3333,Subscription,March
 Panettone,30,Expence,April
-Panettone,-30,Expence,April
-pippo,1,Entrance,February
+Panettone,30,Expence,April

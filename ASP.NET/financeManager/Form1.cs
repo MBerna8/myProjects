@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace financeManager
 {
@@ -16,9 +17,10 @@ namespace financeManager
         public Form1()
         {
             InitializeComponent();
-            //PlaceHolders
-          
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
             //Data File check and creation
 
             string fileName = "sheet.txt"; // The name of the file you want to check
@@ -33,36 +35,50 @@ namespace financeManager
             else
             {
                 Console.WriteLine($"File {fileName} does not exist in the directory.");
-                File.Create( filePath );
+                File.Create(filePath);
             }
-        }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            string[] righeFile = File.ReadAllLines("sheet.txt");
 
-        }
+            foreach (string line in righeFile)
+            {
+                string[] elementiRiga = line.Split(',');
 
-        private void inputType_SelectedIndexChanged(object sender, EventArgs e)
-        {
+                elementiRiga.ToArray();
+                ListViewItem item = new ListViewItem(elementiRiga[0]);
+                
+                    item.SubItems.Add(elementiRiga[1]);
+                    item.SubItems.Add(elementiRiga[2]);
+                    item.SubItems.Add(elementiRiga[3]);
 
-        }
-
-        private void inputMonth_SelectedIndexChanged(object sender, EventArgs e)
-        {
+                    dataTable.Items.Add(item); 
+            }
 
         }
 
         private void addItem_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(inputValue.Text, out double Value) && !string.IsNullOrEmpty(inputType.Text) && !string.IsNullOrEmpty(inputMonth.Text) && !string.IsNullOrEmpty(inputName.Text) && Value>0)
+            if (double.TryParse(inputValue.Text, out double val) && !string.IsNullOrEmpty(inputType.Text) && !string.IsNullOrEmpty(inputMonth.Text) && !string.IsNullOrEmpty(inputName.Text) && val>0)
             {
                 Console.WriteLine("DATI OK");
                 string Name = inputName.Text;
                 string Type = inputType.Text; 
                 string Month = inputMonth.Text;
+                string Value = inputValue.Text;
 
                 string data = ($"{Name},{Value},{Type},{Month}");
 
+                ListViewItem item = new ListViewItem(Name);
+
+                item.SubItems.Add(Value);
+                item.SubItems.Add(Type);
+                item.SubItems.Add(Month);
+                dataTable.Items.Add(item);
+
+                inputName.Clear();
+                inputValue.Clear();
+
+                inputName.Focus();
 
                 using (StreamWriter w = File.AppendText("sheet.txt"))
                 {
@@ -79,13 +95,49 @@ namespace financeManager
 
             }
         }
+        private void removeItem_Click(object sender, EventArgs e)
+        {
+            if (dataTable.Items.Count > 0)
+            {
+                dataTable.Items.Remove(dataTable.SelectedItems[0]);
+            }
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
-        private void Form1_Load(object sender, EventArgs e)
+        }
+
+        private void inputType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inputMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void missingData_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inputName_TextChanged(object sender, EventArgs e)
         {
 
         }
