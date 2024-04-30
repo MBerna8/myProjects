@@ -1,3 +1,15 @@
-RRR,3333,Subscription,March
-Panettone,30,Expence,April
-Panettone,30,Expence,April
+6625733b-0538-4590-8111-981177f8ec55,Carne,1111,Expence,February
+e0152e6d-08b1-49bc-bff8-beb0d6d68456,Affettato,2133,Entrance,April
+803eab1f-8906-4da1-b26d-2155d2ca8e28,Gelati,556,Subscription,September
+87a2af8a-cf30-48a1-b873-593bf2ed58c2,Cane,10000,Expence,February
+35b68af1-500e-41c1-8545-6aeb2b96754e,Cane,10000,Subscription,May
+34be0f86-3da6-4bae-af6a-dfd500381be9,CAne,1000,Expence,June
+c619a948-d70b-47dc-bed8-a9e2a387a058,Cane,10000,Expence,June
+61ad9c3d-2d98-4891-afb3-7d6fd1bf7782,Cane,1000,Expence,May
+26f6dbef-2b66-4eb3-9b64-9459d54a6cc6,cane,1000,Subscription,March
+006ba6fb-4751-409c-8b6e-ec7cab62714d,cane,10000,Subscription,March
+3c08c5d2-fb98-4bb2-8686-e96d0d131d55,Cane,10000,Expence,March
+8f10e874-17ab-4f8e-8a16-f122fd9691ce,cANEW,1000,Expence,May
+f32caa33-2cce-4ca1-b101-e0daa1ca44df,CANE,10000,Expence,July
+a2b08093-c59d-433d-934b-868defc48656,CAne ,1000,Entrance,August
+5cf29338-930c-476b-ac59-074ed36e7312,Cane,10000,Entrance,September

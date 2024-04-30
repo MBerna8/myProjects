@@ -5,10 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.LinkLabel;
+using Microsoft.Data.SqlClient;
 
 namespace financeManager
 {
@@ -18,6 +21,17 @@ namespace financeManager
         {
             InitializeComponent();
         }
+
+        class operation
+        {
+            public string ID;
+            public string name;
+            public double value;
+            public string type;
+            public string month;
+        }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,69 +52,153 @@ namespace financeManager
                 File.Create(filePath);
             }
 
-            string[] righeFile = File.ReadAllLines("sheet.txt");
+            //SQL INTEGRATION
 
-            foreach (string line in righeFile)
+            List<operation> listid = new List<operation>();
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-7PK0304; Initial Catalog=Finance_Manager; Integrated Security=True; TrustServerCertificate=True");
+            string sql = "select * from Operations";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                string[] elementiRiga = line.Split(',');
+                operation oper = new operation();
+                oper.ID = dr["ID"].ToString();
+                oper.name = dr["Nome_Spesa"].ToString();
+                oper.value = Convert.ToDouble(dr["VAlore_Spesa"]);
+                oper.type = dr["Tipo_Spesa"].ToString();
+                oper.month = dr["Mese_SPesa"].ToString();
 
-                elementiRiga.ToArray();
-                ListViewItem item = new ListViewItem(elementiRiga[0]);
-                
-                    item.SubItems.Add(elementiRiga[1]);
-                    item.SubItems.Add(elementiRiga[2]);
-                    item.SubItems.Add(elementiRiga[3]);
+                ListViewItem item = new ListViewItem(oper.ID);
 
-                    dataTable.Items.Add(item); 
+                item.SubItems.Add(oper.name);
+                item.SubItems.Add(oper.value.ToString());
+                item.SubItems.Add(oper.type);
+                item.SubItems.Add(oper.month);
+
+                dataTable.Items.Add(item);
+                Console.WriteLine($"{oper.ID},{oper.name},{oper.value},{oper.type},{oper.month}");
+                listid.Add(oper);
             }
+
+
+            //if (File.ReadAllLines("sheet.txt").Length > 0)
+            //{
+            //    string[] righeFile = File.ReadAllLines("sheet.txt");
+
+            //    foreach (string line in righeFile)
+            //    {
+            //        string[] elementiRiga = line.Split(',');
+
+            //        elementiRiga.ToArray();
+            //        ListViewItem item = new ListViewItem(elementiRiga[0]);
+
+            //        item.SubItems.Add(elementiRiga[1]);
+            //        item.SubItems.Add(elementiRiga[2]);
+            //        item.SubItems.Add(elementiRiga[3]);
+            //        item.SubItems.Add(elementiRiga[4]);
+
+            //        dataTable.Items.Add(item);
+            //    }
+
+            //}
+
 
         }
 
         private void addItem_Click(object sender, EventArgs e)
         {
+            operation obj = new operation();
             if (double.TryParse(inputValue.Text, out double val) && !string.IsNullOrEmpty(inputType.Text) && !string.IsNullOrEmpty(inputMonth.Text) && !string.IsNullOrEmpty(inputName.Text) && val>0)
             {
                 Console.WriteLine("DATI OK");
-                string Name = inputName.Text;
-                string Type = inputType.Text; 
-                string Month = inputMonth.Text;
-                string Value = inputValue.Text;
+                obj.ID = Guid.NewGuid().ToString();
+                obj.name = inputName.Text;
+                obj.value = val;
+                obj.type = inputType.Text; 
+                obj.month = inputMonth.Text;
+                
 
-                string data = ($"{Name},{Value},{Type},{Month}");
+                string data = ($"{obj.ID},{obj.name},{obj.value},{obj.type},{obj.month}");
 
-                ListViewItem item = new ListViewItem(Name);
+                ListViewItem item = new ListViewItem(obj.ID);
 
-                item.SubItems.Add(Value);
-                item.SubItems.Add(Type);
-                item.SubItems.Add(Month);
+                item.SubItems.Add(obj.name);
+                item.SubItems.Add(obj.value.ToString());
+                item.SubItems.Add(obj.type);
+                item.SubItems.Add(obj.month);
                 dataTable.Items.Add(item);
 
                 inputName.Clear();
                 inputValue.Clear();
 
-                inputName.Focus();
+
+                inputType.ResetText();
+                inputMonth.ResetText();
+
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-7PK0304; Initial Catalog=Finance_Manager; Integrated Security=True; TrustServerCertificate=True");
+                SqlCommand cmd;
+
+                //SQL integration
+                con.Open();
+                cmd = new SqlCommand("insert into Operations values('" + obj.ID + "','" + obj.name + "','" + obj.value + "','" + obj.type + "','" + obj.month + "')", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Data Saved in the DATABASE");
+                con.Close();
+
 
                 using (StreamWriter w = File.AppendText("sheet.txt"))
                 {
                     w.WriteLine(data);
                 }
-
-                Console.WriteLine($"{Name} {Value} {Type} {Month}");
-                missingData.Visible = false;
             }
             else
             {
-                missingData.Visible = true;
-                Console.WriteLine("DATI MANCANTI");
-
+                MessageBox.Show("MISSING DATA");
             }
         }
         private void removeItem_Click(object sender, EventArgs e)
         {
             if (dataTable.Items.Count > 0)
             {
+
+                List<string> lines = File.ReadAllLines("sheet.txt").ToList();
+                string item = dataTable.SelectedItems[0].ToString();
+                Console.WriteLine(item);
+                item = item.Substring(15, 36).Trim();
+                Console.WriteLine(item);
+
+
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-7PK0304; Initial Catalog=Finance_Manager; Integrated Security=True; TrustServerCertificate=True");
+                SqlCommand cmd;
+                //con.Open();
+                //SqlCommand cmd = new SqlCommand(sql, con);
+                //SqlDataReader dr = cmd.ExecuteReader();
+                con.Open();
+                cmd = new SqlCommand("DELETE FROM Operations WHERE ID = '" + item + "'", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Data Deleted from the DATABASE");
+                con.Close();
+                //Console.WriteLine(dr["ID"].ToString());
                 dataTable.Items.Remove(dataTable.SelectedItems[0]);
+
+                //while (dr.Read())
+                //{
+                //    SqlConnection conn = new SqlConnection("Data Source=DESKTOP-7PK0304; Initial Catalog=Finance_Manager; Integrated Security=True; TrustServerCertificate=True");
+                //    conn.Open();
+                //    using (SqlCommand command = new SqlCommand("DELETE FROM Operations WHERE ID = '" + item + "'", conn))
+                //    {
+                //        command.ExecuteNonQuery();
+                //    }
+                //    Console.WriteLine(dr["ID"].ToString());
+                //    conn.Close();
+                //    dataTable.Items.Remove(dataTable.SelectedItems[0]);
+                //}
+
+                
+
             }
+
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
